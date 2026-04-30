@@ -12,7 +12,7 @@ interface PricingProps {
 
 export function Pricing({ compact = false }: PricingProps) {
   return (
-    <section className="relative py-24" id="tarifs">
+    <section className="relative py-16" id="tarifs">
       <div className="container-page flex flex-col items-center gap-14">
         {!compact ? (
           <ScrollReveal>

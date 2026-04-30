@@ -10,7 +10,7 @@ interface PillarsProps {
 
 export function Pillars({ data }: PillarsProps) {
   return (
-    <section className="relative py-20">
+    <section className="relative py-12">
       <div className="container-page flex flex-col items-center gap-12">
         <ScrollReveal>
           <SectionTitle eyebrow={data.eyebrow} title={data.title} description={data.intro} />

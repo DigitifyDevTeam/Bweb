@@ -3,7 +3,7 @@ import { Solutions } from '@/components/sections/Solutions'
 import { Services } from '@/components/sections/Services'
 import { Combinations } from '@/components/sections/Combinations'
 import { Founder } from '@/components/sections/Founder'
-import { Pricing } from '@/components/sections/Pricing'
+import { SavingsCalculator } from '@/components/sections/SavingsCalculator'
 import { IntegrationsMarquee } from '@/components/sections/IntegrationsMarquee'
 import { Newsletter } from '@/components/sections/Newsletter'
 import { useSeo } from '@/lib/seo'
@@ -23,7 +23,7 @@ export function Home() {
       <Services />
       <Combinations />
       <Founder />
-      <Pricing />
+      <SavingsCalculator />
       <Newsletter />
     </>
   )

@@ -27,7 +27,7 @@ export function ServicesPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -45,7 +45,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative pb-12">
+      <section className="relative pb-8">
         <div className="container-page">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {services.map((service, idx) => {
@@ -108,7 +108,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative py-12">
+      <section className="relative py-8">
         <div className="container-page">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {VALUES.map((stat, idx) => (

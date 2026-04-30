@@ -75,8 +75,8 @@ export function Navbar() {
                       cn(
                         'rounded-full px-4 py-2 text-sm font-medium transition-all',
                         isActive
-                          ? 'text-white bg-white/10'
-                          : 'text-[color:var(--color-muted)] hover:text-white hover:bg-white/5',
+                          ? 'text-[color:var(--color-text)] bg-white/10'
+                          : 'text-[color:var(--color-muted)] hover:text-[color:var(--color-text)] hover:bg-white/5',
                       )
                     }
                   >

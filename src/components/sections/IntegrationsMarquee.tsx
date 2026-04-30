@@ -1,4 +1,6 @@
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { SectionTitle } from '@/components/ui/SectionTitle'
+import { GradientText } from '@/components/ui/GradientText'
 import {
   SiAirtable,
   SiAnthropic,
@@ -132,7 +134,7 @@ const DEV_STACK = [
   'Slack',
 ] as const
 
-function IntegrationIcon({ name }: { name: string }) {
+function IntegrationIcon({ name }: Readonly<{ name: string }>) {
   const Icon = ICONS_BY_NAME[name] ?? LuBlocks
   const color = ICON_COLORS_BY_NAME[name] ?? '#A5B4FC'
   return (
@@ -151,12 +153,18 @@ export function IntegrationsMarquee() {
   const aiDoubled = [...AI_STACK, ...AI_STACK]
   const devDoubled = [...DEV_STACK, ...DEV_STACK]
   return (
-    <section className="relative py-20">
+    <section className="relative py-12">
       <div className="container-page flex flex-col items-center gap-8">
         <ScrollReveal>
-          <p className="text-center text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--color-muted)]">
-            Compatible avec votre stack — plus de 15 intégrations standard
-          </p>
+          <SectionTitle
+            eyebrow="Nos intégrations"
+            title={
+              <>
+                Une stack IA <GradientText>connectée à votre écosystème</GradientText>
+              </>
+            }
+            description="Nous intégrons les meilleurs outils IA, automation et développement pour déployer des systèmes fiables, évolutifs et alignés avec vos opérations."
+          />
         </ScrollReveal>
 
         <div className="relative w-full overflow-hidden mask-fade-x">

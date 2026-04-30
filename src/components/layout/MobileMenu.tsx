@@ -14,7 +14,7 @@ interface MobileMenuProps {
   onClose: () => void
 }
 
-export function MobileMenu({ open, onClose }: MobileMenuProps) {
+export function MobileMenu({ open, onClose }: Readonly<MobileMenuProps>) {
   const { pathname } = useLocation()
   useScrollLock(open)
   const [servicesOpen, setServicesOpen] = useState(
@@ -68,8 +68,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                         className={cn(
                           'flex items-center justify-between rounded-2xl px-4 py-3 text-lg font-medium transition',
                           sectionActive
-                            ? 'bg-white/10 text-white'
-                            : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-white',
+                            ? 'bg-white/10 text-[color:var(--color-text)]'
+                            : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-[color:var(--color-text)]',
                         )}
                       >
                         <span>Services</span>
@@ -101,8 +101,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                                     className={cn(
                                       'flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition',
                                       active
-                                        ? 'bg-white/10 text-white'
-                                        : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-white',
+                                        ? 'bg-white/10 text-[color:var(--color-text)]'
+                                        : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-[color:var(--color-text)]',
                                     )}
                                   >
                                     <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
@@ -137,8 +137,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                     className={cn(
                       'rounded-2xl px-4 py-3 text-lg font-medium transition',
                       active
-                        ? 'bg-white/10 text-white'
-                        : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-white',
+                        ? 'bg-white/10 text-[color:var(--color-text)]'
+                        : 'text-[color:var(--color-muted)] hover:bg-white/5 hover:text-[color:var(--color-text)]',
                     )}
                   >
                     {link.label}

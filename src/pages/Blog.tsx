@@ -27,7 +27,7 @@ export function Blog() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -45,20 +45,24 @@ export function Blog() {
         </div>
       </section>
 
-      <section className="relative pb-12">
+      <section className="relative pb-8">
         <div className="container-page">
           <ScrollReveal>
             <Link
               to={`/blog/${featured.slug}`}
               className="group glass ring-gradient grid grid-cols-1 gap-8 rounded-3xl p-6 md:p-10 lg:grid-cols-2 transition-transform hover:-translate-y-1"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-brand">
-                <div className="absolute inset-0 grid-pattern" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-display text-6xl font-extrabold text-white/90 drop-shadow">
-                    {featured.category}
-                  </span>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <img
+                  src={featured.imageUrl}
+                  alt={featured.imageAlt}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                  {featured.category}
+                </span>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-[color:var(--color-muted)]">
@@ -85,7 +89,7 @@ export function Blog() {
         </div>
       </section>
 
-      <section className="relative py-12">
+      <section className="relative py-8">
         <div className="container-page">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((post, idx) => (
@@ -94,8 +98,15 @@ export function Blog() {
                   to={`/blog/${post.slug}`}
                   className="group glass flex h-full flex-col gap-4 rounded-3xl p-6 transition-all hover:-translate-y-1 hover:border-white/15"
                 >
-                  <div className="aspect-[16/10] rounded-2xl bg-gradient-to-br from-[color:var(--color-brand-500)]/40 via-[color:var(--color-violet-500)]/30 to-[color:var(--color-cyan-500)]/30 grid-pattern relative overflow-hidden">
-                    <span className="absolute bottom-3 left-3 rounded-full bg-black/40 px-3 py-1 text-xs font-medium backdrop-blur">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+                    <img
+                      src={post.imageUrl}
+                      alt={post.imageAlt}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                    <span className="absolute bottom-3 left-3 rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                       {post.category}
                     </span>
                   </div>

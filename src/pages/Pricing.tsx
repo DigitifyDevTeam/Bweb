@@ -30,7 +30,7 @@ export function PricingPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -50,7 +50,7 @@ export function PricingPage() {
 
       <Pricing compact />
 
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="container-page">
           <ScrollReveal>
             <SectionTitle

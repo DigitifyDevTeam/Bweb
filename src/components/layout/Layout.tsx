@@ -22,7 +22,7 @@ export function Layout() {
   return (
     <div className="relative min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-24">
+      <main className="flex-1 pt-20 md:pt-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

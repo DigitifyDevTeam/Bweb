@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn'
 const schema = z.object({
   firstName: z.string().min(1, 'Prénom requis'),
   lastName: z.string().min(1, 'Nom requis'),
-  email: z.string().email('Email invalide'),
+  email: z.email('Email invalide'),
   phone: z.string().min(6, 'Téléphone invalide'),
   topic: z.string().min(1, 'Choisissez un sujet'),
   size: z.string().min(1, 'Choisissez une taille'),
@@ -18,6 +18,8 @@ const schema = z.object({
 })
 
 type FormValues = z.infer<typeof schema>
+const CONTACT_API_ENDPOINT =
+  import.meta.env.VITE_CONTACT_API_URL ?? '/src/api/send-email.php'
 
 const TOPICS = [
   'Service client ou demandes répétitives',
@@ -40,6 +42,7 @@ const SIZES = [
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const {
     register,
     handleSubmit,
@@ -50,11 +53,32 @@ export function ContactForm() {
     defaultValues: { preference: 'call' },
   })
 
-  async function onSubmit(_values: FormValues) {
-    void _values
-    await new Promise((r) => setTimeout(r, 800))
-    setSubmitted(true)
-    reset()
+  async function onSubmit(values: FormValues) {
+    setSubmitError(null)
+
+    try {
+      const response = await fetch(CONTACT_API_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Email webhook failed with status ${response.status}`)
+      }
+
+      const body = (await response.json()) as { success?: boolean; message?: string }
+      if (!body.success) {
+        throw new Error(body.message ?? 'Email endpoint returned an error')
+      }
+
+      setSubmitted(true)
+      reset()
+    } catch {
+      setSubmitError(
+        "Impossible d'envoyer votre message pour le moment. Réessayez dans quelques instants.",
+      )
+    }
   }
 
   if (submitted) {
@@ -181,9 +205,14 @@ export function ContactForm() {
       </Field>
 
       <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between md:pt-1">
-        <p className="text-xs text-[color:var(--color-muted)]">
-          Réponse garantie sous 24h ouvrées.
-        </p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-[color:var(--color-muted)]">
+            Réponse garantie sous 24h ouvrées.
+          </p>
+          {submitError ? (
+            <p className="text-xs text-rose-400">{submitError}</p>
+          ) : null}
+        </div>
         <Button
           type="submit"
           size="lg"
@@ -204,7 +233,7 @@ interface FieldProps {
   children: React.ReactNode
 }
 
-function Field({ label, error, hint, children }: FieldProps) {
+function Field({ label, error, hint, children }: Readonly<FieldProps>) {
   return (
     <label className="flex flex-col gap-2.5">
       <span className="text-sm font-medium text-[color:var(--color-text)]">

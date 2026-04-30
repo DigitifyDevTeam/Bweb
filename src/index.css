@@ -61,6 +61,7 @@
   --animate-shimmer: shimmer 2.4s linear infinite;
   --animate-orbit: orbit 18s linear infinite;
   --animate-orbit-rev: orbit-rev 22s linear infinite;
+  --animate-earth-rotate: earth-rotate 36s linear infinite;
 }
 
 :root,
@@ -165,6 +166,15 @@ html[data-theme='light'] {
   }
   100% {
     transform: rotate(-360deg) translateX(220px) rotate(360deg);
+  }
+}
+
+@keyframes earth-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
   }
 }
 
@@ -367,5 +377,65 @@ html[data-theme='light'] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .container-page {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .mask-fade-x {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  header .container-page > div {
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .prose-custom {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(88px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(88px) rotate(-360deg);
+    }
+  }
+
+  @keyframes orbit-rev {
+    0% {
+      transform: rotate(0deg) translateX(126px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg) translateX(126px) rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container-page {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
   }
 }

@@ -22,7 +22,7 @@ export function Contact() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -39,7 +39,7 @@ export function Contact() {
         </div>
       </section>
 
-      <section className="relative pb-24">
+      <section className="relative pb-16">
         <div className="container-page">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
             <ScrollReveal className="lg:col-span-5">
@@ -89,6 +89,41 @@ export function Contact() {
                     <li>· Une proposition chiffrée sous 48h</li>
                     <li>· Un POC en moins de 2 semaines si validé</li>
                   </ul>
+                  <div className="mt-4 flex items-center gap-2">
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="inline-flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--color-muted)] transition hover:bg-white/10 hover:text-white"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 fill-current">
+                        <path d="M13.5 9H16V6h-2.5C10.96 6 9 7.96 9 10.5V13H7v3h2v6h3v-6h2.4l.6-3H12v-2.5c0-.83.67-1.5 1.5-1.5Z" />
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="inline-flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--color-muted)] transition hover:bg-white/10 hover:text-white"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 fill-current">
+                        <path d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3Zm8.4 1.8H7.8A3 3 0 0 0 4.8 7.8v8.4a3 3 0 0 0 3 3h8.4a3 3 0 0 0 3-3V7.8a3 3 0 0 0-3-3ZM12 8.4a3.6 3.6 0 1 1 0 7.2 3.6 3.6 0 0 1 0-7.2Zm0 1.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Zm4.2-2.25a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z" />
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--color-muted)] transition hover:bg-white/10 hover:text-white"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 fill-current">
+                        <path d="M6.2 8.7H3.4V20h2.8V8.7ZM4.8 7.4A1.6 1.6 0 1 0 4.8 4a1.6 1.6 0 0 0 0 3.4ZM20.6 13.4c0-3-1.6-4.9-4.4-4.9-2 0-2.9 1.1-3.4 1.9v-1.7H10V20h2.8v-5.6c0-1.5.3-3 2.2-3 1.9 0 1.9 1.8 1.9 3.1V20h2.8l-.1-6.6Z" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

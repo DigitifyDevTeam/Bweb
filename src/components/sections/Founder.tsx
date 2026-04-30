@@ -2,7 +2,7 @@ import { Quote } from 'lucide-react'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { GradientText } from '@/components/ui/GradientText'
 
-function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+function LinkedinIcon(props: Readonly<React.SVGProps<SVGSVGElement>>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
       <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
@@ -31,7 +31,7 @@ const FOUNDERS = [
 
 export function Founder() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-16">
       <div className="container-page">
         <ScrollReveal>
           <div className="mx-auto max-w-6xl flex flex-col items-center gap-10">
@@ -41,7 +41,7 @@ export function Founder() {
               </span>
               <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">
                 Deux fondateurs, une vision :{' '}
-                <GradientText>BWEB en mode exécution</GradientText>
+                <GradientText>BWEB, votre partenaire de transformation IA</GradientText>
               </h2>
               <p className="max-w-2xl text-[color:var(--color-muted)] leading-relaxed">
                 Nous combinons expertise business et excellence technique pour déployer
@@ -55,7 +55,7 @@ export function Founder() {
                   key={founder.name}
                   className="ring-gradient rounded-3xl overflow-hidden flex flex-col border border-white/10 bg-[color:var(--color-surface)]"
                 >
-                  <div className="relative h-72 md:h-80 overflow-hidden">
+                  <div className="relative h-80 md:h-[28rem] lg:h-[32rem] overflow-hidden">
                     <img
                       src={founder.image}
                       alt={founder.name}

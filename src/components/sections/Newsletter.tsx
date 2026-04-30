@@ -16,7 +16,7 @@ export function Newsletter() {
   }
 
   return (
-    <section className="relative py-24" id="newsletter">
+    <section className="relative py-16" id="newsletter">
       <div className="container-page">
         <ScrollReveal>
           <div className="glass ring-gradient relative overflow-hidden rounded-[32px] p-8 md:p-14 text-center">
@@ -48,7 +48,7 @@ export function Newsletter() {
                 Offre découverte
               </span>
               <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">
-                Vous voulez une <GradientText>automatisation IA gratuite ?</GradientText>
+                Prêt à lancer votre <GradientText>automatisation IA sur mesure ?</GradientText>
               </h2>
               <p className="text-[color:var(--color-muted)] leading-relaxed max-w-xl">
                 Laissez votre e-mail et nous vous contacterons pour vous offrir une
@@ -76,7 +76,7 @@ export function Newsletter() {
                     />
                   </label>
                   <Button type="submit" size="lg" iconRight={<ArrowRight className="size-4" />}>
-                    S'abonner
+                    Commencer
                   </Button>
                 </form>
               )}

@@ -10,7 +10,7 @@ interface CTAFinalProps {
 
 export function CTAFinal({ data }: CTAFinalProps) {
   return (
-    <section className="relative py-24">
+    <section className="relative py-16">
       <div className="container-page">
         <ScrollReveal>
           <div className="glass ring-gradient relative overflow-hidden rounded-[32px] p-8 md:p-14 text-center">

@@ -15,14 +15,14 @@ export function Services() {
   const Icon = current.icon
 
   return (
-    <section className="relative py-24" id="services">
+    <section className="relative py-16" id="services">
       <div className="container-page flex flex-col items-center gap-12">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Services IA pour entreprises"
             title={
               <>
-                Les services de <GradientText>BWEB</GradientText>
+                Catalogue IA de <GradientText>Bweb</GradientText>
               </>
             }
             description="Quatre familles de produits IA, conçues pour s'intégrer à votre stack actuelle sans migration ni interruption."
@@ -41,7 +41,7 @@ export function Services() {
                   'relative z-10 rounded-full px-4 md:px-5 py-2 text-sm font-medium transition-colors duration-200',
                   isActive
                     ? 'text-white'
-                    : 'text-[color:var(--color-muted)] hover:text-white',
+                    : 'text-[color:var(--color-muted)] hover:text-[color:var(--color-text)]',
                 )}
               >
                 {isActive ? (

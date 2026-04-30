@@ -84,8 +84,8 @@ export function NavDropdown() {
         className={cn(
           'inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all',
           isActive
-            ? 'text-white bg-white/10'
-            : 'text-[color:var(--color-muted)] hover:text-white hover:bg-white/5',
+            ? 'text-[color:var(--color-text)] bg-white/10'
+            : 'text-[color:var(--color-muted)] hover:text-[color:var(--color-text)] hover:bg-white/5',
         )}
       >
         Services
@@ -108,7 +108,7 @@ export function NavDropdown() {
             transition={{ duration: 0.18, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="absolute left-1/2 top-full z-50 mt-3 w-[min(96vw,640px)] -translate-x-1/2"
           >
-            <div className="glass ring-gradient overflow-hidden rounded-3xl p-3">
+            <div className="ring-gradient overflow-hidden rounded-3xl border border-[color:var(--color-border-soft)] bg-[color:var(--color-surface)] p-3 shadow-[0_20px_45px_-25px_rgba(0,0,0,0.75)]">
               <div className="grid grid-cols-1 gap-1">
                 {SERVICE_NAV.map((service) => {
                   const Icon = service.icon
@@ -138,7 +138,7 @@ export function NavDropdown() {
                           {service.description}
                         </span>
                       </div>
-                      <ArrowRight className="size-4 shrink-0 text-[color:var(--color-muted)] transition-all group-hover:translate-x-0.5 group-hover:text-white" />
+                      <ArrowRight className="size-4 shrink-0 text-[color:var(--color-muted)] transition-all group-hover:translate-x-0.5 group-hover:text-[color:var(--color-text)]" />
                     </Link>
                   )
                 })}

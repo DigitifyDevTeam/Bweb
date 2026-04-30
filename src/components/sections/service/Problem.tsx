@@ -9,7 +9,7 @@ interface ProblemProps {
 
 export function Problem({ data }: ProblemProps) {
   return (
-    <section className="relative py-20">
+    <section className="relative py-12">
       <div className="container-page flex flex-col items-center gap-10">
         <ScrollReveal>
           <SectionTitle eyebrow={data.eyebrow} title={data.title} description={data.intro} />

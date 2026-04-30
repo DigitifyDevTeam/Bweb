@@ -51,7 +51,7 @@ export function About() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -69,7 +69,7 @@ export function About() {
         </div>
       </section>
 
-      <section className="relative py-12">
+      <section className="relative py-8">
         <div className="container-page">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {STATS.map((stat, idx) => (
@@ -88,7 +88,7 @@ export function About() {
         </div>
       </section>
 
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="container-page flex flex-col items-center gap-12">
           <ScrollReveal>
             <SectionTitle
@@ -121,7 +121,7 @@ export function About() {
 
       <Founder />
 
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="container-page">
           <ScrollReveal>
             <SectionTitle

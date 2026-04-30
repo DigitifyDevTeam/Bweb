@@ -17,7 +17,7 @@ export function Faq() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-12">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -35,7 +35,7 @@ export function Faq() {
         </div>
       </section>
 
-      <section className="relative pb-20">
+      <section className="relative pb-12">
         <div className="container-page max-w-3xl">
           <ScrollReveal>
             <Accordion items={FAQ_ITEMS} />

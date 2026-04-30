@@ -21,7 +21,7 @@ export function SavingsCalculator() {
   const automated = Math.round(yearly * 0.55)
 
   return (
-    <section className="relative py-24">
+    <section className="relative py-16">
       <div className="container-page">
         <ScrollReveal>
           <div className="glass ring-gradient relative overflow-hidden rounded-[32px] p-8 md:p-12">
@@ -32,7 +32,7 @@ export function SavingsCalculator() {
                   Calculatrice d'économies
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-[1.05]">
-                  Combien votre équipe pourrait <GradientText>économiser</GradientText> avec l'IA ?
+                  Nos chiffres en <GradientText>impact business</GradientText>
                 </h2>
                 <p className="text-[color:var(--color-muted)] leading-relaxed">
                   Estimez l'impact d'une automatisation BWEB sur les tâches répétitives.
@@ -103,7 +103,7 @@ interface SliderProps {
   suffix: string
 }
 
-function Slider({ label, value, onChange, min, max, suffix }: SliderProps) {
+function Slider({ label, value, onChange, min, max, suffix }: Readonly<SliderProps>) {
   const pct = ((value - min) / (max - min)) * 100
   return (
     <div className="flex flex-col gap-2">
@@ -150,7 +150,7 @@ interface ResultCardProps {
   trend?: boolean
 }
 
-function ResultCard({ label, value, highlight, trend }: ResultCardProps) {
+function ResultCard({ label, value, highlight, trend }: Readonly<ResultCardProps>) {
   return (
     <div
       className={`relative overflow-hidden rounded-2xl border p-5 ${
@@ -165,7 +165,7 @@ function ResultCard({ label, value, highlight, trend }: ResultCardProps) {
       </div>
       <div
         className={`mt-2 font-display text-3xl font-extrabold tracking-tight ${
-          highlight ? 'text-gradient' : 'text-white'
+          highlight ? 'text-gradient' : 'text-[color:var(--color-text)]'
         }`}
       >
         {value}

@@ -20,8 +20,8 @@ export const PLANS: readonly Plan[] = [
     id: 'starter',
     name: 'Starter IA',
     tagline: 'Votre premier système automatisé en 2 semaines',
-    price: 790,
-    priceLabel: '790 €',
+    price: 390,
+    priceLabel: '390 €',
     cadence: 'paiement unique · sans engagement',
     features: [
       { label: '3 flux automatisés en n8n', included: true },
@@ -37,8 +37,8 @@ export const PLANS: readonly Plan[] = [
     id: 'business',
     name: 'Business IA',
     tagline: 'Automatisation + agent IA pour votre processus clé',
-    price: 1890,
-    priceLabel: '1 890 €',
+    price: 1190,
+    priceLabel: '1 190 €',
     cadence: 'paiement unique · sans engagement',
     highlight: true,
     features: [
@@ -55,9 +55,9 @@ export const PLANS: readonly Plan[] = [
     id: 'pro',
     name: 'Pro IA',
     tagline: 'Système complet avec agent vocal et RAG',
-    price: 3490,
-    priceLabel: '3 490 €',
-    cadence: 'paiement unique · sans engagement',
+    price: 0,
+    priceLabel: 'Nous contacter',
+    cadence: 'offre sur mesure selon vos besoins',
     features: [
       { label: 'Tout le plan Business IA', included: true },
       { label: 'Agent vocal (inbound, 3 flux)', included: true },
@@ -66,7 +66,7 @@ export const PLANS: readonly Plan[] = [
       { label: 'Jusqu\'à 6 intégrations standard', included: true },
       { label: '90 jours de support post-livraison', included: true },
     ],
-    cta: { label: 'Demander un diagnostic', href: '/contact' },
+    cta: { label: 'Nous contacter', href: '/contact' },
   },
 ] as const
 

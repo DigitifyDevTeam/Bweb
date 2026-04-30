@@ -10,7 +10,7 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ data }: ServiceHeroProps) {
   return (
-    <section className="relative overflow-hidden pt-10 pb-20 md:pt-14 md:pb-24">
+    <section className="relative overflow-hidden pt-6 pb-12 md:pt-9 md:pb-16">
       <BackgroundGrid />
       <div className="container-page relative">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">

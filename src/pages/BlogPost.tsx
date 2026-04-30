@@ -45,7 +45,7 @@ export function BlogPostPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-16">
+      <section className="relative overflow-hidden py-10">
         <BackgroundGrid />
         <div className="container-page relative">
           <ScrollReveal>
@@ -74,9 +74,17 @@ export function BlogPostPage() {
         </div>
       </section>
 
-      <section className="relative py-12">
+      <section className="relative py-8">
         <div className="container-page max-w-3xl">
           <ScrollReveal>
+            <div className="mb-8 overflow-hidden rounded-3xl border border-white/10">
+              <img
+                src={post.imageUrl}
+                alt={post.imageAlt}
+                className="h-auto w-full object-cover"
+                loading="eager"
+              />
+            </div>
             <article className="prose-custom flex flex-col gap-5 text-lg leading-relaxed text-[color:var(--color-muted)]">
               <p>{post.content}</p>
               <p>
@@ -97,7 +105,7 @@ export function BlogPostPage() {
         </div>
       </section>
 
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="container-page">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">À lire ensuite</h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -107,6 +115,15 @@ export function BlogPostPage() {
                 to={`/blog/${other.slug}`}
                 className="glass group flex h-full flex-col gap-3 rounded-3xl p-6 transition-all hover:-translate-y-1 hover:border-white/15"
               >
+                <div className="relative -mx-2 -mt-2 mb-1 aspect-[16/10] overflow-hidden rounded-2xl">
+                  <img
+                    src={other.imageUrl}
+                    alt={other.imageAlt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                </div>
                 <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-brand-300)]">
                   {other.category}
                 </span>
